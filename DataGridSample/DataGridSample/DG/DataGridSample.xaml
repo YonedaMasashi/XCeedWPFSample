@@ -1,0 +1,27 @@
+﻿<Window x:Class="DataGridSample.DG.DataGridSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataGridSample.Model"
+        mc:Ignorable="d"
+        Title="DataGridSample" Height="450" Width="800">
+    <Grid>
+        <DataGrid ItemsSource="{Binding _Model._Goods}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="商品名" Binding="{Binding _Name}"/>
+                <DataGridComboBoxColumn Header="仕入先"  SelectedValueBinding="{Binding _Vender}" DisplayMemberPath="_Label" SelectedValuePath="_Value">
+                    <DataGridComboBoxColumn.ItemsSource>
+                        <x:Array Type="{x:Type local:VenderToComboBox}">
+                            <local:VenderToComboBox _Label="取引先1" _Value="取引先A"/>
+                            <local:VenderToComboBox _Label="取引先2" _Value="取引先B"/>
+                            <local:VenderToComboBox _Label="取引先3" _Value="取引先C"/>
+                            <local:VenderToComboBox _Label="取引先4" _Value="取引先D"/>
+                        </x:Array>
+                    </DataGridComboBoxColumn.ItemsSource>
+                </DataGridComboBoxColumn>
+                <DataGridCheckBoxColumn Header="入荷済" Binding="{Binding _isAvailable}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

@@ -1,0 +1,15 @@
+﻿<Window x:Class="DataGridSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataGridSample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="180" Width="200">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button Name="DataGridBtn" Content="DataGridOpen" Height="50" Width="100" Margin="10,10,10,10" Click="DataGridBtn_Click"/>
+            <Button Name="DataTableBtn" Content="DataTableOpen" Height="50" Width="100" Margin="10,10,10,10" Click="DataTableBtn_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
